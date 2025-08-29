@@ -18,7 +18,8 @@
     "ib": "init-backend",
     "start": "init-backend && cd .medusa/server && medusa start --verbose",
     "dev": "medusa develop",
-    "email:dev": "email dev --dir=./src/modules/email-notifications/templates --port=3002"
+    "email:dev": "email dev --dir=./src/modules/email-notifications/templates --port=3002",
+    "postinstall": "node node_modules/@techlabi/medusa-marketplace-plugin/.medusa/server/src/patch-admin.js"
   },
   "dependencies": {
     "@medusajs/admin-sdk": "2.8.8",
@@ -35,6 +36,7 @@
     "@mikro-orm/postgresql": "6.4.3",
     "@react-email/components": "^0.0.26",
     "@rokmohar/medusa-plugin-meilisearch": "1.2.3",
+    "@techlabi/medusa-marketplace-plugin": "^0.1.0",
     "awilix": "^8.0.1",
     "medusajs-launch-utils": "^0.0.17",
     "minio": "^8.0.3",
