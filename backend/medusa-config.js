@@ -135,7 +135,7 @@ const medusaConfig = {
     }] : [])
   ],
   plugins: [
-  ...(MEILISEARCH_HOST && MEILISEARCH_ADMIN_KEY ? [{
+    ...(MEILISEARCH_HOST && MEILISEARCH_ADMIN_KEY ? [{
       resolve: '@rokmohar/medusa-plugin-meilisearch',
       options: {
         config: {
@@ -156,7 +156,15 @@ const medusaConfig = {
           }
         }
       }
-    }] : [])
+    }] : []),
+
+    // ⬇️ MULTIVENDOR / MARKETPLACE PLUGIN
+    {
+      resolve: '@techlabi/medusa-marketplace-plugin',
+      options: {
+        // Genelde boş bırakmak yeterli. Gerekirse README'deki opsiyonları ekleriz.
+      }
+    }
   ]
 };
 
